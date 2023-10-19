@@ -1,5 +1,5 @@
 ﻿using Assignment_18_10_23;
-Product[] products = new Product[10];
+/*Product[] products = new Product[10];
 products[0] = new("Bread", 120, 3);
 products[1] = new("Sandwitch", 300, 5);
 products[2] = new("Tomatoo", 700, 10);
@@ -12,6 +12,33 @@ foreach (Product product in products)
 
 
 
+}*/
+Students[] students = new Students[]
+{
+
+ new("Abc", new double[] {89,90,80}, 'A'),
+ new("Abz", new double[] {79,50,80}, 'B'),
+ new("Abcd", new double[] {89,10,80}, 'C'),
+
+
+
+};
+foreach(Students student in students)
+{
+    Console.WriteLine($"Student Name is :{student.Name}");
+    Console.WriteLine($"Student Grade is: {student.Grade}");
+    double[] marks = new double[3];
+    double total = 0;
+    Console.WriteLine("Marks of student is:");
+    for (int i = 0; i < marks.Length; i++)
+    {
+        marks[i] = student.Marks[i];
+        total = total + marks[i];
+        Console.WriteLine(marks[i]);
+    }
+    Console.WriteLine($"Total Marks is:{total}");
+    Console.WriteLine($"Average Marks is: {student.CalculateAverage()}");
+    Console.WriteLine(student.GetMarksSummary());
 }
 
 
