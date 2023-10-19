@@ -1,6 +1,9 @@
 ﻿
 using Basic_Program;
+Arrays arrays = new Arrays();
+arrays.OneDimensional();
 
+/*
 Employees employees = new Employees(111,"Abc","IT",10000);
 Console.WriteLine($"Employee Id Is: {employees.Employeeid}");
 Console.WriteLine($"Employee Name Is: {employees.Employeename}");
