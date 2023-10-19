@@ -29,7 +29,7 @@ foreach(Students student in students)
     Console.WriteLine($"Student Grade is: {student.Grade}");
     double[] marks = new double[3];
     double total = 0;
-    Console.WriteLine("Marks of student is:");
+    Console.WriteLine("Marks of student is:\t");
     for (int i = 0; i < marks.Length; i++)
     {
         marks[i] = student.Marks[i];
