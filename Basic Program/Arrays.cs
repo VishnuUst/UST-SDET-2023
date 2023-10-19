@@ -8,23 +8,37 @@ namespace Basic_Program
 {
     internal class Arrays
     {
-        readonly int[] numbers =new int[5];
+        int[] numbers =new int[5];
+        int[,] nums = { { 1, 2, 3},{ 5, 6, 7 } };
         public void OneDimensional()
         {
-            numbers[0] = 100;
-            numbers[1] = 200;
+            numbers[0] = 2;
+            numbers[1] = 1;
             numbers[2] = 300;
-            for(int i=0;i<numbers.Length;i++)
+
+            Array.Sort(numbers);
+            Console.WriteLine("One Dimensional Array sort");
+            for (int i=0;i<numbers.Length;i++)
             {
                 Console.WriteLine(numbers[i]);
             }
-            Console.WriteLine("Second array elements");
+            Console.WriteLine("One Dimensional Array Clear the Second array elements");
+            Array.Clear(numbers);
+           foreach(var number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+        }
+        public void TwoDimensional()
+        {
             
-            for(int i=0;i<numbers.Length; i++)
+
+             Console.WriteLine("Two Dimensional Array");
+            foreach (var number in nums)
             {
-                numbers[1] = 123;
-                Console.WriteLine(numbers[i]);
+                Console.WriteLine(number);
             }
+
         }
     }
 }
