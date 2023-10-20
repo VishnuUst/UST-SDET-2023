@@ -19,11 +19,11 @@ namespace Basic_Program
             {
                 Grade = "B";
             }
-            else if(Average<=75)
+            else if(Average>=75)
             {
                 Grade = "C";
             }
-            else if(Average<=60)
+            else if(Average>=60)
             {
                 Grade = "D";
             }
