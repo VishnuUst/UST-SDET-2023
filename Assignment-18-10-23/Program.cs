@@ -1,4 +1,32 @@
 ﻿using Assignment_18_10_23;
+string? productName;
+
+
+Console.WriteLine("Electronic Product Details");
+ElectronicsProduct electronicsProduct = new ElectronicsProduct("MixerGrinder",15600,2,10);
+Console.WriteLine("***Electronic Product Details***\n");
+Console.WriteLine($"ProductName is:{electronicsProduct.Productname}\nPrice:{electronicsProduct.Price}" +
+    $"\nQuantity:{electronicsProduct.Quantity}\n");
+electronicsProduct.DisplayWarrantyPeriod();
+Console.WriteLine($"Total Value :{electronicsProduct.ProductValue()}\n\n");
+
+DigitalProduct digitalProduct = new DigitalProduct ("SmartWatch","Mp4",1999,2,3);
+Console.WriteLine("***Digital Product Details***\n");
+Console.WriteLine($"ProductName is:{digitalProduct.Productname}\nPrice:{digitalProduct.Price}" +
+    $"\nQuantity:{digitalProduct.Quantity}\n");
+digitalProduct.DisplayWarrantyPeriod();
+Console.WriteLine($"Total Value :{digitalProduct.ProductValue()}\n\n\n");
+digitalProduct.DisplayFileFormat();
+Console.WriteLine("***Clothing ProductDetails***");
+ClothingProduct clothingProduct = new ClothingProduct("Tshirt", "medium", 500, 2);
+Console.WriteLine($"Product Name:{clothingProduct.Productname}\nPrice:{clothingProduct.Price}\nQuantity:{clothingProduct.Quantity}");
+clothingProduct.DisplayClothingProductSize();
+Console.WriteLine($"Total Value Of Product:{clothingProduct.ProductValue()}");
+
+
+
+
+
 /*Product[] products = new Product[10];
 products[0] = new("Bread", 120, 3);
 products[1] = new("Sandwitch", 300, 5);
@@ -13,7 +41,7 @@ foreach (Product product in products)
 
 
 }*/
-Students[] students = new Students[]
+/*Students[] students = new Students[]
 {
 
  new("Abc", new double[] {89,90,80}, 'A'),
