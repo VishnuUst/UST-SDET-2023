@@ -1,7 +1,57 @@
 ﻿
 using Basic_Program;
+ElectricalVehicle ev=new ElectricalVehicle();
+ev.VehicleNumber=1;
+ev.Brand = "xx";
+ev.Model = "AA";
+ev.Dipslay();
+Console.WriteLine(ev.SetTypeForVehicle());
+PowerVehicle power=new PowerVehicle();
+power.VehicleNumber=1;
+power.Brand = "BB";
+power.Model = "cc";
+power.Dipslay();
+Console.WriteLine(power.SetTypeForVehicle());
+
+
+/*Console.WriteLine("Chose Any One Options");
+Console.WriteLine("1.Teaching Staff\n2.Non Teaching Staff");
+switch(Convert.ToInt32(Console.ReadLine()))
+{
+    case 1:
+        TeachingStaff teachingStaff = new TeachingStaff();
+        Console.WriteLine("****Teaching Staff Details****");
+        teachingStaff.StaffId = 1;
+        teachingStaff.StaffName = "Test";
+        teachingStaff.StaffDepartment = "MCA";
+        teachingStaff.Specialization = "Java";
+        teachingStaff.Semester = 3;
+        teachingStaff.DisplayStaffDetails();
+        teachingStaff.DisplayTeachingStaffDetails();
+        break;
+     case 2:
+        NonTeachingStaff nonTeachingStaff = new NonTeachingStaff();
+        Console.WriteLine("***Non Teaching Staff Details***");
+        nonTeachingStaff.StaffId = 2;
+        nonTeachingStaff.StaffName = "Testtwo";
+        nonTeachingStaff.StaffDepartment = "Cleaning";
+        nonTeachingStaff.Responsibilities = "cleaning Cafteria";
+        nonTeachingStaff.Experience = 3;
+        nonTeachingStaff.DisplayStaffDetails();
+        nonTeachingStaff.DisplayNoonTeachingStaff();
+
+
+        break;
+      default: Console.WriteLine("Invalid Options!!!");
+        break;
+
+
+
+}
+
+
 /*StudentMarks studentMarks = new StudentMarks();*/
-StudentGrade studentGrade = new StudentGrade();
+/*StudentGrade studentGrade = new StudentGrade();
 Console.WriteLine("Enter The student Id");
 studentGrade.StudentId =Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Enter The student Name");

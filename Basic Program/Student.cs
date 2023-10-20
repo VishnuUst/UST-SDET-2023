@@ -13,7 +13,7 @@ namespace Basic_Program
         public string?StudentCity { get; set; }
         public void DisplayStudentDetails()
         {
-            Console.WriteLine($"Roll Num:{StudentId}\nStudent Name:{StudentName}\n" +
+            Console.WriteLine($"\tRoll Num:{StudentId}\nStudent Name:{StudentName}\n" +
                               $"Student city:{StudentCity}");
         }
     }
