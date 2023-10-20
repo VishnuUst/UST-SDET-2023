@@ -1,6 +1,24 @@
 ﻿
 using Basic_Program;
-Arrays arrays = new Arrays();
+StudentMarks studentMarks = new StudentMarks();
+Console.WriteLine("Enter The student Id");
+studentMarks.StudentId =Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter The student Name");
+
+studentMarks.StudentName = Console.ReadLine();
+Console.WriteLine("Enter the Student City");
+studentMarks.StudentCity = Console.ReadLine();
+Console.WriteLine("Enter the Three subject Marks");
+studentMarks.MarkOne = Convert.ToInt32(Console.ReadLine());
+studentMarks.MarkTwo = Convert.ToInt32(Console.ReadLine());
+studentMarks.MarkThree = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Student details");
+studentMarks.DisplayStudentDetails();
+Console.WriteLine($"Marks of Three Subject:\n {studentMarks.MarkOne}\n{studentMarks.MarkTwo}\n{studentMarks.MarkThree}\n");
+Console.Write($"Total Mark of student:{studentMarks.CalculateTotal()}\n");
+Console.WriteLine($"Average Mark Of Student :{studentMarks.CalculateAverage()}");
+/*Arrays arrays = new Arrays();
 arrays.OneDimensional();
 arrays.TwoDimensional();
 arrays.Jaggerdarray();
