@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment_18_10_23
+namespace Assignment
 {
     internal class ElectronicsProduct : Product
     {

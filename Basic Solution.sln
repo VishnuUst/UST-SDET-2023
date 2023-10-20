@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basic Program", "Basic Prog
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringBasic", "StringBasic\StringBasic.csproj", "{F7FE2258-36A7-404E-8A1E-2331F57D9B53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment-18-10-23", "Assignment-18-10-23\Assignment-18-10-23.csproj", "{3E9D7937-A220-4583-B5A9-86B9408BE944}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment", "Assignment-18-10-23\Assignment.csproj", "{3E9D7937-A220-4583-B5A9-86B9408BE944}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

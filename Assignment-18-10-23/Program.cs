@@ -1,8 +1,8 @@
-﻿using Assignment_18_10_23;
+﻿using Assignment;
 string? productName;
 
 
-Console.WriteLine("Electronic Product Details");
+
 ElectronicsProduct electronicsProduct = new ElectronicsProduct("MixerGrinder",15600,2,10);
 Console.WriteLine("***Electronic Product Details***\n");
 Console.WriteLine($"ProductName is:{electronicsProduct.Productname}\nPrice:{electronicsProduct.Price}" +
@@ -17,7 +17,7 @@ Console.WriteLine($"ProductName is:{digitalProduct.Productname}\nPrice:{digitalP
 digitalProduct.DisplayWarrantyPeriod();
 Console.WriteLine($"Total Value :{digitalProduct.ProductValue()}\n\n\n");
 digitalProduct.DisplayFileFormat();
-Console.WriteLine("***Clothing ProductDetails***");
+Console.WriteLine("***Clothing ProductDetails***\n");
 ClothingProduct clothingProduct = new ClothingProduct("Tshirt", "medium", 500, 2);
 Console.WriteLine($"Product Name:{clothingProduct.Productname}\nPrice:{clothingProduct.Price}\nQuantity:{clothingProduct.Quantity}");
 clothingProduct.DisplayClothingProductSize();

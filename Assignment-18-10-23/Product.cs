@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment_18_10_23
+namespace Assignment
 {
     internal class Product
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment_18_10_23
+namespace Assignment
 {
     internal class DigitalProduct : ElectronicsProduct
     {
@@ -16,7 +16,7 @@ namespace Assignment_18_10_23
         }
         public void DisplayFileFormat()
         {
-            Console.WriteLine($"FileFormat is:{fileformat}");
+            Console.WriteLine($"FileFormat is:{fileformat}\n");
         }
     }
 }
