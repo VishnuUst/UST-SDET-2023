@@ -1,23 +1,25 @@
 ﻿
 using Basic_Program;
-StudentMarks studentMarks = new StudentMarks();
+/*StudentMarks studentMarks = new StudentMarks();*/
+StudentGrade studentGrade = new StudentGrade();
 Console.WriteLine("Enter The student Id");
-studentMarks.StudentId =Convert.ToInt32(Console.ReadLine());
+studentGrade.StudentId =Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Enter The student Name");
 
-studentMarks.StudentName = Console.ReadLine();
+studentGrade.StudentName = Console.ReadLine();
 Console.WriteLine("Enter the Student City");
-studentMarks.StudentCity = Console.ReadLine();
+studentGrade.StudentCity = Console.ReadLine();
 Console.WriteLine("Enter the Three subject Marks");
-studentMarks.MarkOne = Convert.ToInt32(Console.ReadLine());
-studentMarks.MarkTwo = Convert.ToInt32(Console.ReadLine());
-studentMarks.MarkThree = Convert.ToInt32(Console.ReadLine());
+studentGrade.MarkOne = Convert.ToInt32(Console.ReadLine());
+studentGrade.MarkTwo = Convert.ToInt32(Console.ReadLine());
+studentGrade.MarkThree = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine("Student details");
-studentMarks.DisplayStudentDetails();
-Console.WriteLine($"Marks of Three Subject:\n {studentMarks.MarkOne}\n{studentMarks.MarkTwo}\n{studentMarks.MarkThree}\n");
-Console.Write($"Total Mark of student:{studentMarks.CalculateTotal()}\n");
-Console.WriteLine($"Average Mark Of Student :{studentMarks.CalculateAverage()}");
+studentGrade.DisplayStudentDetails();
+Console.WriteLine($"Marks of Three Subject:\n {studentGrade.MarkOne}\n{studentGrade.MarkTwo}\n{studentGrade.MarkThree}\n");
+Console.Write($"Total Mark of student:{studentGrade.CalculateTotal()}\n");
+Console.WriteLine($"Average Mark Of Student :{studentGrade.CalculateAverage()}");
+Console.WriteLine($"Grade Of Student :{studentGrade.FindGrade()}");
 /*Arrays arrays = new Arrays();
 arrays.OneDimensional();
 arrays.TwoDimensional();
