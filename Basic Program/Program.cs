@@ -1,6 +1,16 @@
 ﻿
 using Basic_Program;
-ElectricalVehicle ev=new ElectricalVehicle();
+Doctor doctor = new Doctor();
+doctor.AddNewDoctor();
+Console.WriteLine("***New Docotr Details***");
+doctor.DisplayDoctor();
+doctor.ModifyDoctor();
+Console.WriteLine("***Modified Doctor Details***");
+doctor.DisplayDoctor();
+/*IDoctor doctor1 = new Doctor();
+doctor1.AddNewDoctor();
+
+/*ElectricalVehicle ev=new ElectricalVehicle();
 ev.VehicleNumber=1;
 ev.Brand = "xx";
 ev.Model = "AA";
