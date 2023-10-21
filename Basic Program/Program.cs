@@ -7,6 +7,9 @@ doctor.DisplayDoctor();
 doctor.ModifyDoctor();
 Console.WriteLine("***Modified Doctor Details***");
 doctor.DisplayDoctor();
+doctor.BookAppointment(1, "VIBIN");
+Console.WriteLine("Appointment deleted details");
+doctor.DeleteAppointment(1);
 /*IDoctor doctor1 = new Doctor();
 doctor1.AddNewDoctor();
 
