@@ -11,14 +11,15 @@ int total;
 
 do
 {
-    Console.WriteLine("Ashoka Book Store");
-Console.WriteLine("1.Add Book\n2.Add Customer\n3.Place Order And Display Order\n4.Search Book\n5.Exit");
+    Console.WriteLine("\t*****Ashoka Book Store*****\t");
+Console.WriteLine("1.Add Book\n2.Add Customer\n3.Place Order And Display Order\n4.Search Book\n5.Exit\t");
 Console.WriteLine("Choose The Option");
 int option = Convert.ToInt32(Console.ReadLine());
 
     BookType[] bookType = new BookType[]
           {
             new("The Hindu","Hari",20,1300,"yes","Fiction"),
+         
             
 
           };
@@ -27,7 +28,7 @@ int option = Convert.ToInt32(Console.ReadLine());
     {
         case 1:
           
-            Console.WriteLine("Book Added SuccessFully");
+            Console.WriteLine("\t*****Book Added SuccessFully*****\t");
             foreach (BookType booktypes in bookType)
             {
                 booktypes.DisplayDetails();
@@ -61,7 +62,7 @@ int option = Convert.ToInt32(Console.ReadLine());
                     total = book.Price;
                     Order order = new Order(orderdate,total);
 
-                    Console.WriteLine("Order Details is");
+                    Console.WriteLine("\t******Order Details is*****\t");
 
                     order.DisplayOrder();
                     Console.WriteLine($"Book Title is:{book.Title}");
