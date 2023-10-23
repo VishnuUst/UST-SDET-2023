@@ -1,5 +1,13 @@
 ﻿using Assignment;
-string? productName;
+using Assignments;
+
+Rectangle rectangle = new Rectangle(12,12);
+Circle circle = new Circle(10);
+rectangle.Draw();
+circle.Draw();
+/*Employee employee = new Employee(1, "Vishnu", "T", 2);
+employee.DisplayInfo();
+/*string? productName;
 
 
 
