@@ -8,7 +8,7 @@ namespace Basic_Program
 {
     internal class BankDetails
     {
-        public BankDetails() 
+       /* public BankDetails() 
         {
             CustomerId = 0;
             AccountNumber = 1234567655L;
@@ -22,7 +22,7 @@ namespace Basic_Program
             AccountNumber = accountNumber;
             CustomerName = customerName;
             Status = "active";
-        }
+        }*/
 
         public BankDetails(int customerId, long accountNumber, string? customerName, string? status)
         {
@@ -37,6 +37,14 @@ namespace Basic_Program
         public long AccountNumber { get; set; }
         public string? CustomerName {  get; set; }
         public string? Status {  get; set; }
+        public virtual void WelcomeMessage()
+        {
+            Console.WriteLine($"Welcome To IDFC");
+        }
+        public virtual void ExitMessage()
+        {
+            Console.WriteLine("DONE");
+        }
         public void GetAccountDetails(int customerId)
         {
             if(CustomerId == customerId)

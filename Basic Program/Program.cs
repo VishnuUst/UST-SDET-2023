@@ -2,9 +2,9 @@
 using Basic_Program;
 /*BankDetails bankDetails = new BankDetails(1234,11234567860L,"Vishnu","InActive");*/
 /*BankDetails bankdetailsone = new BankDetails();*/
-BankDetails bankdetailstwo = new BankDetails(1111, 12121212L, "Deepak");
-Console.WriteLine("***IDFC BANK***");
-Console.WriteLine("1.CustomerId\n 2.AccountNumber\n3.CustomerName");
+BankDetails bankDetailsNew = new BankDetailsNew(123, 12345677L, "Vishnu", "Active");
+bankDetailsNew.WelcomeMessage();
+Console.WriteLine("1.CustomerId\n2.AccountNumber\n3.CustomerName");
 int choice;
 Console.WriteLine("Choose One Option");
 choice = Convert.ToInt32(Console.ReadLine());
@@ -13,17 +13,20 @@ switch(choice)
     case 1:
         Console.WriteLine("Enter The CustomerId");
         int customerid = Convert.ToInt32(Console.ReadLine());
-        bankdetailstwo.GetAccountDetails(customerid);
+        bankDetailsNew.GetAccountDetails(customerid);
+        bankDetailsNew.ExitMessage();
         break;
     case 2:
         Console.WriteLine("Enter The AccountNumber");
         long accountnumber = Convert.ToInt64(Console.ReadLine());
-        bankdetailstwo.GetAccountDetails(accountnumber);
+        bankDetailsNew.GetAccountDetails(accountnumber);
+        bankDetailsNew.ExitMessage();
         break;
     case 3:
         Console.WriteLine("Enter the CustomerName Name");
         string?customername= Console.ReadLine();
-        bankdetailstwo.GetAccountDetails(customername);
+        bankDetailsNew.GetAccountDetails(customername);
+        bankDetailsNew.ExitMessage();
         break;
     default:
         Console.WriteLine("INVALID ENTRY TRY AGAIN LATER!!!");
