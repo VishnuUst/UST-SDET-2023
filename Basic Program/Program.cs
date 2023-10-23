@@ -1,6 +1,34 @@
 ﻿
 using Basic_Program;
-Doctor doctor = new Doctor();
+BankDetails bankDetails = new BankDetails(1234,11234567860L,"Vishnu","InActive");
+Console.WriteLine("***IDFC BANK***");
+Console.WriteLine("1.CustomerId\n 2.AccountNumber\n3.CustomerName");
+int choice;
+Console.WriteLine("Choose One Option");
+choice = Convert.ToInt32(Console.ReadLine());
+switch(choice)
+{
+    case 1:
+        Console.WriteLine("Enter The CustomerId");
+        int customerid = Convert.ToInt32(Console.ReadLine());
+        bankDetails.GetAccountDetails(customerid);
+        break;
+    case 2:
+        Console.WriteLine("Enter The AccountNumber");
+        long accountnumber = Convert.ToInt64(Console.ReadLine());
+        bankDetails.GetAccountDetails(accountnumber);
+        break;
+    case 3:
+        Console.WriteLine("Enter the CustomerName Name");
+        string?customername= Console.ReadLine();
+        bankDetails.GetAccountDetails(customername);
+        break;
+    default:
+        Console.WriteLine("INVALID ENTRY TRY AGAIN LATER!!!");
+        break;
+
+}
+/*Doctor doctor = new Doctor();
 doctor.AddNewDoctor();
 Console.WriteLine("***New Docotr Details***");
 doctor.DisplayDoctor();
