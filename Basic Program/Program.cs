@@ -1,6 +1,8 @@
 ﻿
 using Basic_Program;
-BankDetails bankDetails = new BankDetails(1234,11234567860L,"Vishnu","InActive");
+/*BankDetails bankDetails = new BankDetails(1234,11234567860L,"Vishnu","InActive");*/
+/*BankDetails bankdetailsone = new BankDetails();*/
+BankDetails bankdetailstwo = new BankDetails(1111, 12121212L, "Deepak");
 Console.WriteLine("***IDFC BANK***");
 Console.WriteLine("1.CustomerId\n 2.AccountNumber\n3.CustomerName");
 int choice;
@@ -11,17 +13,17 @@ switch(choice)
     case 1:
         Console.WriteLine("Enter The CustomerId");
         int customerid = Convert.ToInt32(Console.ReadLine());
-        bankDetails.GetAccountDetails(customerid);
+        bankdetailstwo.GetAccountDetails(customerid);
         break;
     case 2:
         Console.WriteLine("Enter The AccountNumber");
         long accountnumber = Convert.ToInt64(Console.ReadLine());
-        bankDetails.GetAccountDetails(accountnumber);
+        bankdetailstwo.GetAccountDetails(accountnumber);
         break;
     case 3:
         Console.WriteLine("Enter the CustomerName Name");
         string?customername= Console.ReadLine();
-        bankDetails.GetAccountDetails(customername);
+        bankdetailstwo.GetAccountDetails(customername);
         break;
     default:
         Console.WriteLine("INVALID ENTRY TRY AGAIN LATER!!!");

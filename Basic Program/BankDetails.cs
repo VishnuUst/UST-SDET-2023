@@ -8,6 +8,22 @@ namespace Basic_Program
 {
     internal class BankDetails
     {
+        public BankDetails() 
+        {
+            CustomerId = 0;
+            AccountNumber = 1234567655L;
+            CustomerName = "Gokul";
+            Status = "Active";
+        }
+
+        public BankDetails(int customerId, long accountNumber, string? customerName)
+        {
+            CustomerId = customerId;
+            AccountNumber = accountNumber;
+            CustomerName = customerName;
+            Status = "active";
+        }
+
         public BankDetails(int customerId, long accountNumber, string? customerName, string? status)
         {
             CustomerId = customerId;
