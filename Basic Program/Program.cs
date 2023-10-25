@@ -1,8 +1,11 @@
 ﻿
 using Basic_Program;
+
+NonGeneric nonGeneric = new NonGeneric();
+nonGeneric.ArrayList();
 /*BankDetails bankDetails = new BankDetails(1234,11234567860L,"Vishnu","InActive");*/
 /*BankDetails bankdetailsone = new BankDetails();*/
-BankDetails bankDetailsNew = new BankDetailsNew(123, 12345677L, "Vishnu", "Active");
+/*BankDetails bankDetailsNew = new BankDetailsNew(123, 12345677L, "Vishnu", "Active");
 bankDetailsNew.WelcomeMessage();
 Console.WriteLine("1.CustomerId\n2.AccountNumber\n3.CustomerName");
 int choice;
