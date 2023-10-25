@@ -1,7 +1,56 @@
 ﻿using Assignment;
 using Assignments;
+/*string? policyName;
+int policyId;
+double premiumAmount;
+Console.WriteLine("Enter the policyName");
+policyName = Console.ReadLine();
+Console.WriteLine("Enter the policyid");
+policyId = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the premiumAmount");
+premiumAmount = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Policy Details");
+Console.WriteLine($"Policy name:{policyName}\nPolicy Id:{policyId}\nPremiumAmount:{premiumAmount}\n");
+Console.WriteLine("Updated Details");
+Console.WriteLine("Enter New Premium Amount");
+double newpremium = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("***Updated Details***");
+InsurancePolicy insurancePolicy = new InsurancePolicy(policyName, policyId, premiumAmount);
+Console.WriteLine($"Policy name:{policyName}\nPolicy Id:{policyId}\noldPremiumAmount:{premiumAmount}\nNewPremium:{insurancePolicy.RenewPolicy(newpremium)}");
+Console.WriteLine("***Reniewal Details");
+Console.WriteLine($"Policy name:{policyName}\nPolicy Id:{policyId}\noldPremiumAmount:{premiumAmount}\nNewPremium:{insurancePolicy.RenewPolicy()}");
+*/
+CarInsurance carInsurance = new CarInsurance();
+Console.WriteLine("***New India CarInsurance***");
+Console.WriteLine("Enter The PolicyName");
+carInsurance.PolicyName = Console.ReadLine();
+Console.WriteLine("Enter The PolicyId");
+carInsurance.PolicyId = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the Premium Amount");
+carInsurance.PremiumAmount = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Enter The Car Type(1.Fully\n,2.Semi)\n");
+carInsurance.CarType = Console.ReadLine();
 
-Rectangle rectangle = new Rectangle(12,12);
+
+
+
+Console.WriteLine("***CarInsurance Policy Details***");
+Console.WriteLine($"Policy Name:{carInsurance.PolicyName}\nPolicy Id:{carInsurance.PolicyId}\nPremium Amount:{carInsurance.PremiumAmount}\nCar Type:{carInsurance.CarType}\n Sum Insured:{carInsurance.CalculatePremiumAmount()}");
+LifeInsurance lifeInsurance = new LifeInsurance();
+Console.WriteLine("***NewIndiaLifeInsurance***");
+Console.WriteLine("Enter The PolicyName");
+lifeInsurance.PolicyName = Console.ReadLine();
+Console.WriteLine("Enter The PolicyId");
+lifeInsurance.PolicyId = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the Premium Amount");
+lifeInsurance.PremiumAmount = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Enter The Age\n");
+lifeInsurance.age = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("***LifeInsurance Policy Details***");
+Console.WriteLine($"Policy Name:{lifeInsurance.PolicyName}\nPolicy Id:{lifeInsurance.PolicyId}\nPremium Amount:{lifeInsurance.PremiumAmount}\nAge:{lifeInsurance.age}\n Sum Insured:{lifeInsurance.CalculatePremiumAmount()}");
+
+
+/*Rectangle rectangle = new Rectangle(12,12);
 Circle circle = new Circle(10);
 rectangle.Draw();
 circle.Draw();
