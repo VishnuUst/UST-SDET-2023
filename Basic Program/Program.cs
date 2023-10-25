@@ -3,6 +3,16 @@ using Basic_Program;
 
 NonGeneric nonGeneric = new NonGeneric();
 nonGeneric.ArrayList();
+
+nonGeneric.StackHandling();
+nonGeneric.QueueHandling();
+nonGeneric.HashHandling();
+nonGeneric.SortedListHandling();
+Generic generic = new Generic();
+generic.ListHandling();
+generic.DictionaryHandling();
+generic.StackHandling();
+generic.QueueHandling();
 /*BankDetails bankDetails = new BankDetails(1234,11234567860L,"Vishnu","InActive");*/
 /*BankDetails bankdetailsone = new BankDetails();*/
 /*BankDetails bankDetailsNew = new BankDetailsNew(123, 12345677L, "Vishnu", "Active");
