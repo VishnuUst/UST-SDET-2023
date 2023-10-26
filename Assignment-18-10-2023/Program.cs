@@ -1,5 +1,50 @@
 ﻿using Assignment;
 using Assignments;
+
+
+try
+{
+    Patient.AddPatient(1, "Vishnu", 25, "Cholestrol");
+   // Patient.AddPatient(2, "", 23, "sss");
+    //Patient.AddPatient(3, "Hari", 123, "Pressure");
+    Patient.AddPatient(3, "Hari", 23, "");
+
+
+    Patient.Display();
+   
+
+
+}
+catch(CustomException ex)
+{
+    Console.WriteLine(ex.Message);
+}
+
+
+
+/*CallRecord callRecordOne = new(123, 99999, 12.01);
+CallRecord callRecordTwo = new(124, 99999, 11.2);
+CallRecord callRecordThree = new(125, 9898989, 1.02);
+CallRecord.callRecords.Add(callRecordOne);
+CallRecord.callRecords.Add(callRecordTwo);
+CallRecord.callRecords.Add(callRecordThree);
+Console.WriteLine("***Search Call History By PhoneNumber");
+int phonenumber = Convert.ToInt32(Console.ReadLine());
+CallRecord.SearchCallRecordByPhoneNumber(phonenumber);
+CallRecord.DisplayCountOfCallHistory();
+
+/*Customer customerOne = new(101, "Shirin", 94949494, 120000);
+Customer customerTwo = new(102, "Jachithra", 232323, 100000);
+Customer customerThree = new(103, "Gokul", 12121212, 50000);
+Customer.customer.Add(customerOne);
+Customer.customer.Add(customerTwo);
+Customer.customer.Add(customerThree);
+Customer.DisplayAllCustomer();
+Console.WriteLine("**Search Customer By PhoneNumber**");
+
+int phonenumber = Convert.ToInt32(Console.ReadLine());
+Customer.DisplayCustomerByPhoneNumber(phonenumber);
+
 /*string? policyName;
 int policyId;
 double premiumAmount;
@@ -20,6 +65,7 @@ Console.WriteLine($"Policy name:{policyName}\nPolicy Id:{policyId}\noldPremiumAm
 Console.WriteLine("***Reniewal Details");
 Console.WriteLine($"Policy name:{policyName}\nPolicy Id:{policyId}\noldPremiumAmount:{premiumAmount}\nNewPremium:{insurancePolicy.RenewPolicy()}");
 */
+/*
 CarInsurance carInsurance = new CarInsurance();
 Console.WriteLine("***New India CarInsurance***");
 Console.WriteLine("Enter The PolicyName");
