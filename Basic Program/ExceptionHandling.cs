@@ -20,11 +20,21 @@ namespace Basic_Program
         {
             try
             {
+                int[] num = { 10, 20, 30 };
                 int res = Num1 / Num2;
+               
                 Console.WriteLine(res);
+                foreach (int num2 in num)
+                {
+                    res = num2 / Num2;
+                    Console.WriteLine(res);
+                }
             }
             catch(ArithmeticException ex)
             {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(ex.Source);
                 Console.WriteLine("Divide By Zero Is Not Possible");
             }
         }
