@@ -26,7 +26,7 @@ namespace Basic_Program
         }
         public void NumCheck()
         {
-            if(Num1>=100)
+            if (Num1 >= 100)
             {
                 Console.WriteLine("Congraz");
             }
@@ -34,6 +34,9 @@ namespace Basic_Program
             {
                 throw new ArgumentException(MyException.exMessageList["Three"]);
             }
+        }
+        public void NumcheckOne()
+        { 
             if(Num2<100) 
             {
                

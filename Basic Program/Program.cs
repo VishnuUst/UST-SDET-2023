@@ -2,11 +2,20 @@
 using Basic_Program;
 using Basic_Program.ExceptionMessage;
 
-ExceptionHandling exceptionHandling = new ExceptionHandling(100,150);
+ExceptionHandling exceptionHandling = new ExceptionHandling(10,150);
 try
 {
     exceptionHandling.NumCheck();
+  
 
+}
+catch(ArgumentException ex)
+{
+    Console.WriteLine(ex.Message);
+}
+try
+{
+    exceptionHandling.NumcheckOne();
 }
 catch(ArgumentException ex)
 {
