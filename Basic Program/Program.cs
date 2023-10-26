@@ -1,7 +1,40 @@
 ﻿
 using Basic_Program;
-ExceptionHandling exceptionHandling = new ExceptionHandling(10,2);
-exceptionHandling.Divide();
+using Basic_Program.ExceptionMessage;
+
+ExceptionHandling exceptionHandling = new ExceptionHandling(100,150);
+try
+{
+    exceptionHandling.NumCheck();
+
+}
+catch(ArgumentException ex)
+{
+    Console.WriteLine(ex.Message);
+}
+/*
+try
+{
+    exceptionHandling.Divide();
+}
+catch (ArithmeticException ex)
+{
+    Console.WriteLine(MyException.exMessageList["One"]);
+   
+}
+catch(IndexOutOfRangeException ex)
+{
+    Console.WriteLine(MyException.exMessageList["Two"]);
+}
+catch(Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
+ finally
+{
+    Console.WriteLine("Successfully Completed !!!");
+
+}
 /*NonGeneric nonGeneric = new NonGeneric();
 nonGeneric.ArrayList();
 

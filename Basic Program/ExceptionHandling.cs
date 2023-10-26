@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Basic_Program.ExceptionMessage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,26 +19,34 @@ namespace Basic_Program
         public int Num2 { get; set; }
         public void Divide()
         {
-            try
-            {
-                int[] num = { 10, 20, 30 };
-                int res = Num1 / Num2;
-               
-                Console.WriteLine(res);
-                foreach (int num2 in num)
-                {
-                    res = num2 / Num2;
-                    Console.WriteLine(res);
-                }
-            }
-            catch(ArithmeticException ex)
-            {
-                Console.WriteLine(ex.Message);
-                Console.WriteLine(ex.StackTrace);
-                Console.WriteLine(ex.Source);
-                Console.WriteLine("Divide By Zero Is Not Possible");
-            }
+            int[] num = { 10, 20, 30 };
+            int res = Num1 / Num2;
+
+            Console.WriteLine(res);
         }
+        public void NumCheck()
+        {
+            if(Num1>=100)
+            {
+                Console.WriteLine("Congraz");
+            }
+            else
+            {
+                throw new ArgumentException(MyException.exMessageList["Three"]);
+            }
+            if(Num2<100) 
+            {
+               
+                Console.WriteLine("Congrazzz");
+            }
+            else
+            {
+                throw new ArgumentException(MyException.exMessageList["Four"]);
+            }
+
+        }
+            
+        
 
     }
 }
