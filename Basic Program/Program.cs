@@ -1,7 +1,8 @@
 ﻿
 using Basic_Program;
-
-NonGeneric nonGeneric = new NonGeneric();
+ExceptionHandling exceptionHandling = new ExceptionHandling(10,2);
+exceptionHandling.Divide();
+/*NonGeneric nonGeneric = new NonGeneric();
 nonGeneric.ArrayList();
 
 nonGeneric.StackHandling();
