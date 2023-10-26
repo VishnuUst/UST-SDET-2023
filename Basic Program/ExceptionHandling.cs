@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Basic_Program.ExceptionMessage.MyException;
 
 namespace Basic_Program
 {
@@ -32,7 +33,7 @@ namespace Basic_Program
             }
             else
             {
-                throw new ArgumentException(MyException.exMessageList["Three"]);
+                throw new Num1Exception(MyException.exMessageList["Three"]);
             }
         }
         public void NumcheckOne()
@@ -44,7 +45,7 @@ namespace Basic_Program
             }
             else
             {
-                throw new ArgumentException(MyException.exMessageList["Four"]);
+                throw new Num2Exception(MyException.exMessageList["Four"]);
             }
 
         }

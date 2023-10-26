@@ -1,9 +1,30 @@
 ﻿
 using Basic_Program;
 using Basic_Program.ExceptionMessage;
+using static Basic_Program.ExceptionMessage.MyException;
 
 ExceptionHandling exceptionHandling = new ExceptionHandling(10,150);
+
 try
+{
+    exceptionHandling.NumCheck();
+
+
+}
+catch (Num1Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
+
+try
+{
+    exceptionHandling.NumcheckOne();
+}
+catch(Num2Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
+/*try
 {
     exceptionHandling.NumCheck();
   
@@ -12,15 +33,7 @@ try
 catch(ArgumentException ex)
 {
     Console.WriteLine(ex.Message);
-}
-try
-{
-    exceptionHandling.NumcheckOne();
-}
-catch(ArgumentException ex)
-{
-    Console.WriteLine(ex.Message);
-}
+}*/
 /*
 try
 {

@@ -23,6 +23,20 @@ namespace Basic_Program.ExceptionMessage
             {"Four","Age Is More" }
 
         };
+        internal class Num1Exception : Exception
+        {
+            public Num1Exception(string message) : base(message)
+            {
+
+            }
+        }
+        internal class Num2Exception : Exception
+        {
+            public Num2Exception(string message) : base(message)
+            {
+
+            }
+        }
 
     }
 }
