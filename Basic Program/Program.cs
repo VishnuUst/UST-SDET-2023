@@ -2,7 +2,9 @@
 using Basic_Program;
 using Basic_Program.ExceptionMessage;
 using static Basic_Program.ExceptionMessage.MyException;
-
+FileOperations fileOperations = new FileOperations();
+fileOperations.CreateFile();
+/*
 ExceptionHandling exceptionHandling = new ExceptionHandling(10,150);
 
 try
