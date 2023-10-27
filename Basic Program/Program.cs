@@ -3,7 +3,13 @@ using Basic_Program;
 using Basic_Program.ExceptionMessage;
 using static Basic_Program.ExceptionMessage.MyException;
 FileOperations fileOperations = new FileOperations();
+Console.WriteLine("***Create A file***");
 fileOperations.CreateFile();
+Console.WriteLine("***Write Data To File***");
+fileOperations.WriteData();
+Console.WriteLine("Succeessfully Writed go and check the file the data avail or not!!!");
+Console.WriteLine("***Read Data From First Created File***");
+fileOperations.ReadData();
 /*
 ExceptionHandling exceptionHandling = new ExceptionHandling(10,150);
 
