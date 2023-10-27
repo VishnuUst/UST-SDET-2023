@@ -1,4 +1,2 @@
-RecordId:1,PatientId:2,Description:dd,Date:332
-RecordId:22,PatientId:222,Description:ss,Date:3232
 4 44 qw 1234
 2 23 dd 222
