@@ -10,6 +10,12 @@ fileOperations.WriteData();
 Console.WriteLine("Succeessfully Writed go and check the file the data avail or not!!!");
 Console.WriteLine("***Read Data From First Created File***");
 fileOperations.ReadData();
+Console.WriteLine("**Copy And Move Operation**");
+//fileOperations.CopyFile();
+Console.WriteLine("Success");
+Console.WriteLine("**File Deletion**");
+fileOperations.DeleteFile();
+Console.WriteLine("Successfully Deleted!!!");
 /*
 ExceptionHandling exceptionHandling = new ExceptionHandling(10,150);
 

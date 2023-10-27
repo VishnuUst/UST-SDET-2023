@@ -36,7 +36,7 @@ namespace Basic_Program
         {
             FileStream fs = new FileStream("D:\\SDET-DAILYWORK\\Basic Solution\\Files\\Sample.txt", FileMode.Open, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
-            sr.BaseStream.Seek(0, SeekOrigin.Begin);
+            sr.BaseStream.Seek(5,SeekOrigin.Current);
             string str = sr.ReadLine();
             while (str != null)
             {
@@ -47,6 +47,26 @@ namespace Basic_Program
             fs.Close();
 
 
+        }
+       /* public void CopyFile()
+        {
+            FileInfo fileInfo = new FileInfo("D:\\SDET-DAILYWORK\\Basic Solution\\Files\\Sample.txt");
+            FileInfo fileInfo1 = new FileInfo("D:\\SDET-DAILYWORK\\Basic Solution\\Files\\Sample2.txt");
+            fileInfo.CopyTo("D:\\SDET-DAILYWORK\\Basic Solution\\copyandmove" + "\\Sample.txt");
+            fileInfo1.MoveTo("D:\\SDET-DAILYWORK\\Basic Solution\\copyandmove"+"\\Sample2.txt");
+            
+
+        }*/
+        public void DeleteFile()
+        {
+            FileInfo fileInfo = new FileInfo("D:\\SDET-DAILYWORK\\Basic Solution\\Files\\Sample2.txt");
+            fileInfo.Delete();
+        }
+        public void FileProperties()
+        {
+            FileInfo fileInfo = new FileInfo("D:\\SDET-DAILYWORK\\Basic Solution\\Files\\Sample2.txt");
+            Console.WriteLine(fileInfo.FullName);
+            Console.WriteLine(fileInfo.Length.ToString());
         }
     }
 }

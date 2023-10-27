@@ -1,23 +1,25 @@
 ﻿using Assignment;
 using Assignments;
-
+using static Assignments.ExceptionHandling.MyException;
 
 try
 {
-    Patient.AddPatient(1, "Vishnu", 25, "Cholestrol");
-   // Patient.AddPatient(2, "", 23, "sss");
-    //Patient.AddPatient(3, "Hari", 123, "Pressure");
-    Patient.AddPatient(3, "Hari", 23, "");
+    // Patient.AddPatient(1, "Vishnu", 25, "Cholestrol");
+    MedicalRecord.AddMedicalRecord(1, "Vishnu", "Sugar", 250);
 
 
-    Patient.Display();
+    MedicalRecord.DisplayMedicalRecords();
    
 
 
 }
-catch(CustomException ex)
+catch(InvalidPatientException ex)
 {
     Console.WriteLine(ex.Message);
+}
+catch(InvalidMedicalRecordException ex)
+{
+    Console.WriteLine($"{ex.Message}");
 }
 
 
