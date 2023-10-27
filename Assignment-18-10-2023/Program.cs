@@ -1,5 +1,6 @@
 ﻿using Assignment;
 using Assignments;
+using System.Threading.Channels;
 using static Assignments.ExceptionHandling.MyException;
 /*try
 {
@@ -23,7 +24,41 @@ catch(InvalidMedicalRecordException ex)
 }*/
 int choice;
 int option;
+
 do
+{
+    Console.WriteLine("1.Add Medical History 2.Search and view record B");
+    choice = Convert.ToInt32(Console.ReadLine());
+    switch (choice)
+    {
+        case 1:
+            Console.WriteLine("Enter the Record Id");
+            int recordId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter The Patient Id");
+            int patientId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter The Description");
+            string? description = Console.ReadLine();
+            Console.WriteLine("Enter The Date");
+            string? date = Console.ReadLine();
+            MedicalHistory medical = new MedicalHistory(recordId, patientId, description, date);
+            MedicalHistory.AddMedicalHostory(medical);
+            medical.WriteData();
+            break;
+        case 2:
+            Console.WriteLine("Search Patient By Id");
+            int pId = Convert.ToInt32(Console.ReadLine());
+            MedicalHistory.ReadDataById(pId);
+            break;
+
+
+
+    }
+    Console.WriteLine("Do U Want To Continue");
+    option= Convert.ToInt32(Console.ReadLine());
+
+}while (option == 1);
+
+/*do
 {
     Console.WriteLine("1.Add Patient\n 2.View Patient");
     Console.WriteLine("Enter The choice");
@@ -66,8 +101,7 @@ do
 
 
 
-
-/*CallRecord callRecordOne = new(123, 99999, 12.01);
+CallRecord callRecordOne = new(123, 99999, 12.01);
 CallRecord callRecordTwo = new(124, 99999, 11.2);
 CallRecord callRecordThree = new(125, 9898989, 1.02);
 CallRecord.callRecords.Add(callRecordOne);
@@ -109,8 +143,7 @@ InsurancePolicy insurancePolicy = new InsurancePolicy(policyName, policyId, prem
 Console.WriteLine($"Policy name:{policyName}\nPolicy Id:{policyId}\noldPremiumAmount:{premiumAmount}\nNewPremium:{insurancePolicy.RenewPolicy(newpremium)}");
 Console.WriteLine("***Reniewal Details");
 Console.WriteLine($"Policy name:{policyName}\nPolicy Id:{policyId}\noldPremiumAmount:{premiumAmount}\nNewPremium:{insurancePolicy.RenewPolicy()}");
-*/
-/*
+
 CarInsurance carInsurance = new CarInsurance();
 Console.WriteLine("***New India CarInsurance***");
 Console.WriteLine("Enter The PolicyName");
@@ -141,13 +174,13 @@ Console.WriteLine("***LifeInsurance Policy Details***");
 Console.WriteLine($"Policy Name:{lifeInsurance.PolicyName}\nPolicy Id:{lifeInsurance.PolicyId}\nPremium Amount:{lifeInsurance.PremiumAmount}\nAge:{lifeInsurance.age}\n Sum Insured:{lifeInsurance.CalculatePremiumAmount()}");
 
 
-/*Rectangle rectangle = new Rectangle(12,12);
+Rectangle rectangle = new Rectangle(12,12);
 Circle circle = new Circle(10);
 rectangle.Draw();
 circle.Draw();
 /*Employee employee = new Employee(1, "Vishnu", "T", 2);
 employee.DisplayInfo();
-/*string? productName;
+string? productName;
 
 
 
@@ -175,7 +208,7 @@ Console.WriteLine($"Total Value Of Product:{clothingProduct.ProductValue()}");
 
 
 
-/*Product[] products = new Product[10];
+Product[] products = new Product[10];
 products[0] = new("Bread", 120, 3);
 products[1] = new("Sandwitch", 300, 5);
 products[2] = new("Tomatoo", 700, 10);
@@ -188,8 +221,7 @@ foreach (Product product in products)
 
 
 
-}*/
-/*Students[] students = new Students[]
+}Students[] students = new Students[]
 {
 
  new("Abc", new double[] {89,90,80}, 'A'),
@@ -218,7 +250,7 @@ foreach(Students student in students)
 }
 
 
-/*Console.WriteLine("Enter the Name");
+Console.WriteLine("Enter the Name");
 string name=Console.ReadLine();
 Console.WriteLine("Enter the marks");
 int markone=Convert.ToInt32(Console.ReadLine());
@@ -228,5 +260,6 @@ CalculateAverage calculateAverage=new CalculateAverage(markone, marktwo, markthr
 Console.WriteLine($"Name Of Student is: {name}");
 Console.WriteLine($"Average Mark is:{calculateAverage.CalculateAverageMark()}");
 Console.WriteLine($"Total Mark is:{calculateAverage.TotalMark()}");
-Console.WriteLine($"Grade is:{calculateAverage.GetGrade()}");*/
+Console.WriteLine($"Grade is:{calculateAverage.GetGrade()}");
 
+*/
