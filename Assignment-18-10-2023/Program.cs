@@ -1,16 +1,16 @@
 ﻿using Assignment;
 using Assignments;
 using static Assignments.ExceptionHandling.MyException;
-
-try
+/*try
 {
     // Patient.AddPatient(1, "Vishnu", 25, "Cholestrol");
-    MedicalRecord.AddMedicalRecord(1, "Vishnu", "Sugar", 250);
+    MedicalRecord medicalRecord = new MedicalRecord(12, 12, "Hari", 24, "Hl", 300);
+
+
+    MedicalRecord.AddMedicalRecord(medicalRecord);
 
 
     MedicalRecord.DisplayMedicalRecords();
-   
-
 
 }
 catch(InvalidPatientException ex)
@@ -20,7 +20,50 @@ catch(InvalidPatientException ex)
 catch(InvalidMedicalRecordException ex)
 {
     Console.WriteLine($"{ex.Message}");
-}
+}*/
+int choice;
+int option;
+do
+{
+    Console.WriteLine("1.Add Patient\n 2.View Patient");
+    Console.WriteLine("Enter The choice");
+    choice = Convert.ToInt32(Console.ReadLine());
+   
+    switch (choice)
+    {
+        case 1:
+           
+            Console.WriteLine("Enter The Patient ID");
+            int patientId = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter The Patient Name");
+            string? patientname = Console.ReadLine();
+            Console.WriteLine("Enter the Age");
+            int age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter The Diagnose");
+            string? diagnose = Console.ReadLine();
+            try
+            {
+                Patient patient = new Patient(patientId, patientname,age,diagnose);
+                Patient.AddPatient(patient);
+                patient.WriteData();
+                
+            }
+            catch (InvalidPatientException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+          
+            break;
+        case 2:
+            Patient.ReadData();
+            break;
+
+    }
+    Console.WriteLine("Do you want to continue press one for Continue two for exit");
+    option=Convert.ToInt32(Console.ReadLine());
+} while (option== 1);
+
 
 
 

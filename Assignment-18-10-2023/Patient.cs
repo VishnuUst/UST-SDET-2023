@@ -17,31 +17,50 @@ namespace Assignments
         public string ? Diagnose {  get; set; }
        public static List<Patient> patients = new List<Patient>();
 
-       
-
-        public static void AddPatient(int patientId,string?patientName,int age,string?diagnose )
+        public Patient(int patientId, string? patientName, int age, string? diagnose)
         {
-            if( age<0 || age>120)
+            PatientId = patientId;
+            PatientName = patientName;
+            Age = age;
+            Diagnose = diagnose;
+        }
+
+        public static void AddPatient(Patient p)
+        {
+            if(p.Age<0 || p.Age>120)
             {
                 throw new CustomException(MyException.error["One"]);
             }
-           if(string.IsNullOrEmpty(patientName) )
+           if(string.IsNullOrEmpty(p.PatientName) )
             {
                 throw new CustomException(MyException.error["Two"]);
             }
-           if(string.IsNullOrEmpty(diagnose) ) 
+           if(string.IsNullOrEmpty(p.Diagnose) ) 
             {
                 throw new CustomException(MyException.error["Three"]);
             }
-            Patient patient = new Patient();
-            patient.PatientId = patientId;
-            patient.PatientName = patientName;
-            patient.Age = age;
-            patient.Diagnose = diagnose;
-            patients.Add(patient);
+            
+            patients.Add(p);
 
             
 
+        }
+        public  void WriteData()
+        {
+
+            FileStream fileStream = new FileStream("D:\\SDET-DAILYWORK\\Basic Solution\\Assignment-18-10-2023\\FileHand\\PatientData.txt", FileMode.Append, FileAccess.Write);
+            StreamWriter fileWriter = new StreamWriter(fileStream);
+            fileWriter.WriteLine($"PatientId:{PatientId},PatientName:{PatientName},Age:{Age},Diagnose:{Diagnose}"); 
+            fileWriter.Close();
+            fileStream.Close();
+        }
+        public static void ReadData()
+        {
+            FileStream fs = new FileStream("D:\\SDET-DAILYWORK\\Basic Solution\\Assignment-18-10-2023\\FileHand\\PatientData.txt", FileMode.Open, FileAccess.Read);
+            StreamReader sr = new StreamReader(fs);
+            sr.BaseStream.Seek(0, SeekOrigin.Current);
+            string str = sr.ReadToEnd();
+            Console.WriteLine($"{str}\n");
         }
         public static void Display()
         {

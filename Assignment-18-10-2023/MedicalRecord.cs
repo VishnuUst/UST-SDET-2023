@@ -14,31 +14,34 @@ namespace Assignments
         
         public int TotalCost {  get; set; }
         public static List<MedicalRecord> medicalRecords = new List<MedicalRecord>();
-        public static void AddMedicalRecord(int recordId,string?patientName,string? diagnose,int totalCost)
+
+        public MedicalRecord(int recordId,int patientId, string? patientName, int age, string? diagnose,int totalcost) : base(patientId, patientName, age, diagnose)
+        {
+            RecordId = recordId;
+            TotalCost = totalcost;
+        }
+
+        public static void AddMedicalRecord(MedicalRecord medicalRecord)
 
         { 
-            if(recordId<=0)
+            if(medicalRecord.RecordId<=0)
             {
                 throw new InvalidMedicalRecordException(MyException.error["Five"]);
             }
-            if(string.IsNullOrEmpty(patientName) )
+            if(string.IsNullOrEmpty(medicalRecord.PatientName) )
             {
                 throw new InvalidPatientException(MyException.error["Two"]);
             }
-            if(string.IsNullOrEmpty(diagnose) )
+            if(string.IsNullOrEmpty(medicalRecord.Diagnose) )
             {
                 throw new InvalidPatientException(MyException.error["Three"]);
             }
-            if(totalCost<=0)
+            if(medicalRecord.TotalCost<=0)
             {
                 throw new InvalidMedicalRecordException(MyException.error["Four"]);
             }
            
-            MedicalRecord medicalRecord = new MedicalRecord();
-            medicalRecord.RecordId = recordId;
-            medicalRecord.PatientName = patientName;
-            medicalRecord.Diagnose = diagnose;
-            medicalRecord.TotalCost = totalCost;
+            
             medicalRecords.Add(medicalRecord);
 
 
