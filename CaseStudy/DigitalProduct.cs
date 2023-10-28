@@ -6,82 +6,46 @@ using System.Threading.Tasks;
 
 namespace CaseStudy
 {
-    internal class DigitalProduct:Product,IOrderable
+    internal class DigitalProduct : Product, IOrderable
     {
-        
-
         public string? DownloadLink { get; set; }
         public string? FileFormat { get; set; }
 
+        public static List<DigitalProduct> Products = new List<DigitalProduct>();
         public void DeliveringProduct()
         {
-            Console.WriteLine("Enter The Cutomer Id");
-            int cuid =Convert.ToInt32(Console.ReadLine());
-            OrderDetails order =OrderDetails.orderDetails.Find(x=>x.CustomerId == cuid);
-            if (order == null)
-            {
-                Console.WriteLine("Order Not Found");
-
-            }
-            if(order.Status=="Active")
-            {
-                Console.WriteLine("Payment Not instantiated");
-            }
-            if(order.Status=="DeActive")
-            {
-                Console.WriteLine("Order Already Delivered");
-            }
-           
-            else if(order.Status=="Pending")
-            {
-                Console.WriteLine("Tru Again Later!!!");
-            }
-            order.Status = "Completed";
-            Console.WriteLine("Order Successfully finished!!!");
+            Console.WriteLine("Download link is {0}", DownloadLink);
         }
 
-        public  void PlacingOrder()
+        public void PlacingOrder()
         {
-            Console.WriteLine("Enter The Customer Id");
-            int cuid = Convert.ToInt32(Console.ReadLine());
-            var dataone = Customers.Customer.Find(x => x.CustomerId == cuid);
-            if (dataone != null)
+            Console.WriteLine("Do you want to continue press \n 1 For Yes \n2 for No");
+            int option = Convert.ToInt32(Console.ReadLine());
+            if (option == 1)
             {
-                Console.WriteLine("Choose The Product Type Do you Want");
-                string? type = Console.ReadLine();
-                Console.WriteLine("Search The Product");
-                string? name = Console.ReadLine();
-                Console.WriteLine("Enter The Quantity");
-                int qty = Convert.ToInt32(Console.ReadLine());
-
-                var data = Product.products.Find(x => x.ProductName == name || x.StockQuantity <= qty);
-                if (data != null)
-                {
-
-                    int id = Convert.ToInt32(Console.ReadLine());
-                    OrderDetails orderDetail = new OrderDetails(data.ProductId, dataone.CustomerId, "Incomplete", dataone.CustomerName, dataone.CustomerEmail, type);
-                    OrderDetails.orderDetails.Add(orderDetail);
-                    Console.WriteLine("The Order success");
-                }
+                if (ProductQuantity > 0)
+                    Console.WriteLine("Continue to payment");
                 else
-                {
-                    Console.WriteLine("Prodcut Name is NoT Available Or Quantity is greater ");
-                }
-
+                    Console.WriteLine("product not available");
             }
             else
             {
-                Console.WriteLine("Customer Not Available");
+                Console.WriteLine("The Product data is reverting");
             }
-
-
         }
-
-
 
         public void ProcessingPayment()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Enter the card details for product {0}", ProductName);
+            string? crednum = Console.ReadLine();
+            if (crednum == null)
+            {
+                Console.WriteLine("invalid number");
+            }
+            else
+            {
+                Console.WriteLine("payment successful");
+            }
         }
     }
 }
