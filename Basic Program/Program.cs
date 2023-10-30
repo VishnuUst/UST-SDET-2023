@@ -7,7 +7,7 @@ GenericsExample<string> genericsExampleOne = new GenericsExample<string>("Hai","
 Console.WriteLine($"{genericsExampleOne.Value1} {genericsExampleOne.Value2}");*/
 GenericsExample<int> ga = new (new int[3] { 1, 2, 3 });
 ga.Display();
-
+wa
 /*
 FileOperations fileOperations = new FileOperations();
 Console.WriteLine("***Create A file***");
