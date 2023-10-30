@@ -4,6 +4,7 @@ using System.Threading.Channels;
 using static System.Reflection.Metadata.BlobBuilder;
 
 
+/*
 Customers customersOne = new Customers();
 customersOne.CustomerID = 1;
 customersOne.CustomerName = "Gokul";

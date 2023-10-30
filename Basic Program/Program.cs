@@ -1,7 +1,14 @@
 ﻿
 using Basic_Program;
-using Basic_Program.ExceptionMessage;
-using static Basic_Program.ExceptionMessage.MyException;
+
+/*GenericsExample<int> genericsExample = new GenericsExample<int>(10,20);
+Console.WriteLine($"{genericsExample.Value1}{genericsExample.Value2}");
+GenericsExample<string> genericsExampleOne = new GenericsExample<string>("Hai","Vishnu");
+Console.WriteLine($"{genericsExampleOne.Value1} {genericsExampleOne.Value2}");*/
+GenericsExample<int> ga = new (new int[3] { 1, 2, 3 });
+ga.Display();
+
+/*
 FileOperations fileOperations = new FileOperations();
 Console.WriteLine("***Create A file***");
 fileOperations.CreateFile();
