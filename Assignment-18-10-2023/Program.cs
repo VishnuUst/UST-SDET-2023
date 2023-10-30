@@ -22,6 +22,33 @@ catch(InvalidMedicalRecordException ex)
 {
     Console.WriteLine($"{ex.Message}");
 }*/
+Console.WriteLine("Enter the room number You want");
+int roomNumber=Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the room type You want(double/single");
+string? type = Console.ReadLine();
+HotelRoom hotelRoom = new HotelRoom(roomNumber,type,true);
+RoomReservation<HotelRoom> roomReservation = new RoomReservation<HotelRoom>();
+roomReservation.AddRoom(hotelRoom);
+Console.WriteLine("Room Details");
+foreach (var room in RoomReservation<HotelRoom>.reservations)
+{
+    Console.WriteLine($"Room Number{room.RoomNumber}\nRoom Type:{room.RoomType}");
+}
+Console.WriteLine("Enter The Room Number");
+int roomnumbers = Convert.ToInt32(Console.ReadLine());
+//var data =RoomReservation<HotelRoom>.reservations.Find(x=>x.RoomNumber==roomnumbers);
+HotelRoom data=RoomReservation<HotelRoom>.reservations.Find(x=>x.RoomNumber==roomnumbers);
+if(data!=null)
+{
+    
+    roomReservation.RemoveRoom(data);
+    Console.WriteLine("Removed Success");
+}
+else
+{
+    Console.WriteLine("No Room found to remove!!!");
+}
+/*
 int choice;
 int option;
 
