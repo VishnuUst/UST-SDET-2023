@@ -2,6 +2,112 @@
 using Assignments;
 using System.Threading.Channels;
 using static Assignments.ExceptionHandling.MyException;
+
+
+
+Inventory<string> inventory = new Inventory<string>();
+int choice, option;
+do
+{
+    Console.WriteLine("Choose The Menu");
+    Console.WriteLine("1.Add Product\n2.Update Product\n3.RemoveProduct\n4.Search ProductById\n5.Search Product By Name");
+    choice = Convert.ToInt32(Console.ReadLine());
+    switch (choice)
+    {
+        case 1:
+            Console.WriteLine("Enter The Product Id");
+            int id = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter The ProductName");
+            string? productname = Console.ReadLine();
+            Console.WriteLine("Enter The Price");
+            double price = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter the quantity in stock");
+            int qty = Convert.ToInt32(Console.ReadLine());
+            inventory.AddProduct(new Products<string>(id, productname, price, qty));
+            break;
+        case 2:
+            Console.WriteLine("Enter the product id Do You want update");
+            int proid = Convert.ToInt32(Console.ReadLine());
+            var prId = inventory.FindProductById(proid);
+            if (prId != null)
+            {
+                Console.WriteLine("Enter the Product Name");
+                string? name = Console.ReadLine();
+                Console.WriteLine("Enter the price");
+                double pric = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Enter the qty");
+                int qt = Convert.ToInt32(Console.ReadLine());
+                inventory.UpdateProduct(proid, name, pric, qt);
+                Console.WriteLine("Successfully Updated");
+
+            }
+            else
+            {
+                Console.WriteLine("No Product Found!!!");
+            }
+
+            break;
+        case 3:
+            Console.WriteLine("Enter the product Id Do You Want Delete");
+            int ids = Convert.ToInt32(Console.ReadLine());
+            var data = inventory.FindProductById(ids);
+            if (data != null)
+            {
+                inventory.DeleteProduct(ids);
+                Console.WriteLine("Product Deleted Success!!!!");
+            }
+            else
+            {
+                Console.WriteLine("No Product available!!!");
+            }
+            break;
+        case 4:
+            Console.WriteLine("View Product BY Id");
+            Console.WriteLine("Enter The Product Id");
+            int pid = Convert.ToInt32(Console.ReadLine());
+            Products<string> pro = inventory.FindProductById(pid);
+            if (pro != null)
+            {
+                Console.WriteLine($"Product Id:{pro.ProductId}\nProduct Name:{pro.ProductName}" +
+                    $"\nPrice:{pro.Price}\nQuantity:{pro.QuantityInStock}");
+            }
+            else
+            {
+                Console.WriteLine("No Product Available");
+            }
+
+
+
+            break;
+        case 5:
+            Console.WriteLine("Search Product By Name");
+            string? proname = Console.ReadLine();
+            List<Products<string>> dat = inventory.FindProductByName(proname);
+            if (dat != null)
+            {
+                foreach (Products<string> p in dat)
+                {
+                    Console.WriteLine($"Product Id:{p.ProductId}\nProduct Name:{p.ProductName}" +
+                    $"\nPrice:{p.Price}\nQuantity:{p.QuantityInStock}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No Product Found!!!");
+            }
+            break;
+        case 6:
+            Environment.Exit(0);
+            break;
+        default:
+            Console.WriteLine("Invalid Option!!!!");
+            break;
+    }
+    Console.WriteLine("Do you want to continue \n1. Yes \n2.No");
+    option = Convert.ToInt32(Console.ReadLine());
+
+} while (option == 1);
+
 /*try
 {
     // Patient.AddPatient(1, "Vishnu", 25, "Cholestrol");
@@ -21,7 +127,8 @@ catch(InvalidPatientException ex)
 catch(InvalidMedicalRecordException ex)
 {
     Console.WriteLine($"{ex.Message}");
-}*/
+}
+
 Console.WriteLine("Enter the room number You want");
 int roomNumber=Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Enter the room type You want(double/single");
@@ -41,14 +148,14 @@ HotelRoom data=RoomReservation<HotelRoom>.reservations.Find(x=>x.RoomNumber==roo
 if(data!=null)
 {
     
-    roomReservation.RemoveRoom(data);
+   roomReservation.RemoveRoom(data);
     Console.WriteLine("Removed Success");
 }
 else
 {
     Console.WriteLine("No Room found to remove!!!");
 }
-/*
+
 int choice;
 int option;
 
@@ -85,7 +192,7 @@ do
 
 }while (option == 1);
 
-/*do
+do
 {
     Console.WriteLine("1.Add Patient\n 2.View Patient");
     Console.WriteLine("Enter The choice");
