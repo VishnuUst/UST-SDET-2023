@@ -22,5 +22,17 @@ namespace Basic_Program
             Num2 = num2;
             Console.WriteLine(Num1+Num2);
         }
+        public int Addr(int num1, int num2)
+        {
+            Num1 = num1;
+            Num2 = num2;
+            return Num1 + Num2;
+        }
+        public void Sub(int num1, int num2)
+        {
+            Num1 = num1;
+            Num2 = num2;
+            Console.WriteLine(Num1 - Num2);
+        }
     }
 }
