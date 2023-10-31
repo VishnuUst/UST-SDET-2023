@@ -3,16 +3,23 @@ using Assignments;
 using System.Threading.Channels;
 using static Assignments.ExceptionHandling.MyException;
 
-public delegate void Del1();
+
+
 class Program
 {
-
+    public delegate double DelegateOne(Employees employee);
+    public delegate double DelegateTwo(Employees employeeone);
 
     public static void Main(String[] args)
     {
         //DelegateExample delegateExample = new DelegateExample();
-        Del1 del1 = DelegateExample.MethodA;
-        del1.Invoke();
+        Employees employee = new(1, "Vishnu", 4);
+        Employees employeeone = new(2, "Gokul", 5);
+        DelegateOne delegateOne = Employees.BonusCalculation;
+        DelegateTwo delegateTwo = Employees.BonusCalculation;
+        Console.WriteLine($"Employee Name:{employee.EmployeeName}\nPerformance Rating:{employee.PerformanceRange}\nBonus Amount:{delegateOne(employee) }");
+        Console.WriteLine($"Employee Name:{employeeone.EmployeeName}\nPerformance Rating:{employeeone.PerformanceRange}\nBonus Amount:{delegateTwo(employeeone)}");
+
     }
 }
 
