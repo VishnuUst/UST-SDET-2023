@@ -2,17 +2,45 @@
 using Assignments;
 using System.Threading.Channels;
 using static Assignments.ExceptionHandling.MyException;
-
-
-
 class Program
 {
-    public delegate double DelegateOne(Employees employee);
+    public delegate string DelegateMessageOne(string msg);
+    public delegate string DelegateMessageTwo(string msg);
+    public static void Main(string[] args)
+    {
+        HotelEvent hotelEvent = new("Dj", "Trivandrum", "12.00:12-10-2023", 4);
+        DelegateMessageOne delegateMessageOne = HotelEvent.EventRegistration;
+        if(hotelEvent != null) 
+        {
+            Console.WriteLine(delegateMessageOne($"Hai {hotelEvent.EventName} is Successfully Registered the event on {hotelEvent.EventDate}"));
+        }
+        else
+        {
+            Console.WriteLine(delegateMessageOne("Unsuccessfully registered"));
+        }
+        HotelEvent hotelEventone = new("Hallowing", "Kollam", "12.0013-10-2023", 6);
+
+        DelegateMessageTwo delegateMessageTwo = HotelEvent.EventRegistration;
+        if (hotelEventone != null)
+        {
+            Console.WriteLine(delegateMessageTwo($"Hai {hotelEventone.EventName} is Successfully Registered the event on {hotelEventone.EventDate}"));
+        }
+        else
+        {
+            Console.WriteLine(delegateMessageTwo("Unsuccessfully registered"));
+        }
+    }
+}
+
+/*
+class Program
+{
+   public delegate double DelegateOne(Employees employee);
     public delegate double DelegateTwo(Employees employeeone);
 
     public static void Main(String[] args)
     {
-        //DelegateExample delegateExample = new DelegateExample();
+        DelegateExample delegateExample = new DelegateExample();
         Employees employee = new(1, "Vishnu", 4);
         Employees employeeone = new(2, "Gokul", 5);
         DelegateOne delegateOne = Employees.BonusCalculation;
@@ -23,7 +51,7 @@ class Program
     }
 }
 
-/*
+
 Inventory<string> inventory = new Inventory<string>();
 int choice, option;
 do
