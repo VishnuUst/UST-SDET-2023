@@ -1,11 +1,24 @@
 ﻿
 using Basic_Program;
+public delegate void DelegateOne(string msg);
+public delegate void DelegateTwo(int n1,int n2);
+class Program
+{
+    public static void Main(string[] args)
+    {
+        DelegateOne delegateOne = DelegateExamples.MethodDisplay;
+        delegateOne("Hai Vishnu!!!");
+        DelegateExamples delegateExamples = new();
+        DelegateTwo delegateTwo = delegateExamples.Add;
+        delegateTwo(10, 20);
+    }
+}
 
 /*GenericsExample<int> genericsExample = new GenericsExample<int>(10,20);
 Console.WriteLine($"{genericsExample.Value1}{genericsExample.Value2}");
 GenericsExample<string> genericsExampleOne = new GenericsExample<string>("Hai","Vishnu");
 Console.WriteLine($"{genericsExampleOne.Value1} {genericsExampleOne.Value2}");*/
-GenericsExample<int> ga = new (new int[3] { 1, 2, 3 });
+/*GenericsExample<int> ga = new (new int[3] { 1, 2, 3 });
 ga.Display();
 wa
 /*

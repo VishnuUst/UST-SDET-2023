@@ -3,8 +3,20 @@ using Assignments;
 using System.Threading.Channels;
 using static Assignments.ExceptionHandling.MyException;
 
+public delegate void Del1();
+class Program
+{
 
 
+    public static void Main(String[] args)
+    {
+        //DelegateExample delegateExample = new DelegateExample();
+        Del1 del1 = DelegateExample.MethodA;
+        del1.Invoke();
+    }
+}
+
+/*
 Inventory<string> inventory = new Inventory<string>();
 int choice, option;
 do
@@ -108,7 +120,7 @@ do
 
 } while (option == 1);
 
-/*try
+try
 {
     // Patient.AddPatient(1, "Vishnu", 25, "Cholestrol");
     MedicalRecord medicalRecord = new MedicalRecord(12, 12, "Hari", 24, "Hl", 300);
