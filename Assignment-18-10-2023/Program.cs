@@ -6,7 +6,7 @@ int choice, option;
 do
 {
     Console.WriteLine("***Hormuz Nest***");
-    Console.WriteLine("1.Add Place\t2.View Place");
+    Console.WriteLine("1.Add Place\n2.View Top Place\n3.View Place By Price\n4.FilterPlaceByLocation\n5.Exit");
     Console.WriteLine("Choose The Menu You Want");
     choice = Convert.ToInt32(Console.ReadLine());
     switch (choice)
@@ -16,18 +16,31 @@ do
         Console.WriteLine("**HormuZ Nest**");
         Console.WriteLine("Enter The Place Name");
         string? name = Console.ReadLine();
-        Console.WriteLine("Enter The Country");
-        string? country = Console.ReadLine();
+        Console.WriteLine("Enter The Location Name");
+        string? location = Console.ReadLine();
         Console.WriteLine("Enter the Rating Of The Place");
         double rating = Convert.ToDouble(Console.ReadLine());
-        TourismDestination tourismDestination = new TourismDestination(name, country, rating);
-        TourismDestination.destinations.Add(tourismDestination);
+        Console.WriteLine("Enter The Cost");
+        double price = Convert.ToDouble(Console.ReadLine());
+        TourismDestinationOne tourismDestination = new TourismDestinationOne(name, location, rating,price);
+        TourismDestinationOne.tourismDestinationOnes.Add(tourismDestination);
+    
         break;
         case 2:
-        TourismDestination.TourismDestinations();
+            Console.WriteLine("Enter The Rating Range You Want");
+            double rates = Convert.ToDouble(Console.ReadLine());
+            TourismDestinationOne.TopRated(rates);
         break;
       case 3:
-            Environment.Exit(1);
+            TourismDestinationOne.ViewDataPricePerNight();
+            break;
+      case 4:
+            Console.WriteLine("Enter The Location You Want Visit");
+            string loc = Console.ReadLine();
+            TourismDestinationOne.FilterPlaceByCityOrRegion(loc);
+            break;
+      case 5:
+          Environment.Exit(0);
             break;
       default:
             Console.WriteLine("Invalid Option!!!");
