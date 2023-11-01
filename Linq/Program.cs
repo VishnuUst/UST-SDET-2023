@@ -5,3 +5,6 @@ using Linq;
 LinqExample linqExample = new LinqExample();
 linqExample.LinqExam();
 linqExample.LinqExamTwo();
+linqExample.SortingOrderBy();
+linqExample.SortingOrderByDescending();
+linqExample.LookupExample();
