@@ -2,9 +2,44 @@
 using Assignments;
 using System.Threading.Channels;
 using static Assignments.ExceptionHandling.MyException;
-class Program
+int choice, option;
+do
 {
-    public delegate string DelegateMessageOne(string msg);
+    Console.WriteLine("***Hormuz Nest***");
+    Console.WriteLine("1.Add Place\t2.View Place");
+    Console.WriteLine("Choose The Menu You Want");
+    choice = Convert.ToInt32(Console.ReadLine());
+    switch (choice)
+    {
+        case 1:
+
+        Console.WriteLine("**HormuZ Nest**");
+        Console.WriteLine("Enter The Place Name");
+        string? name = Console.ReadLine();
+        Console.WriteLine("Enter The Country");
+        string? country = Console.ReadLine();
+        Console.WriteLine("Enter the Rating Of The Place");
+        double rating = Convert.ToDouble(Console.ReadLine());
+        TourismDestination tourismDestination = new TourismDestination(name, country, rating);
+        TourismDestination.destinations.Add(tourismDestination);
+        break;
+        case 2:
+        TourismDestination.TourismDestinations();
+        break;
+      case 3:
+            Environment.Exit(1);
+            break;
+      default:
+            Console.WriteLine("Invalid Option!!!");
+            break;
+    }
+    Console.WriteLine("Do You Want To CONTINUE PRESS\n 1.Yes\n 2.No");
+    option = Convert.ToInt32(Console.ReadLine());
+
+}while(option==1);
+/*class Program(();
+{
+   / public delegate string DelegateMessageOne(string msg);
     public delegate string DelegateMessageTwo(string msg);
     public static void Main(string[] args)
     {
