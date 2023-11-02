@@ -1,7 +1,16 @@
 ﻿using Assignment;
+using Assignment_2_oct19_Q1;
 using Assignments;
 using System.Threading.Channels;
 using static Assignments.ExceptionHandling.MyException;
+Hotel hotel = new Hotel("name", 4, "ars", "adfgas", 45);
+Hotel hotel1 = new Hotel("nam3", 6, "ars", "adfgas", 45);
+Hotel hotel2 = new Hotel("name6", 17, "ars", "adfgas", 45);
+
+await hotel.HotelBookingig(4, hotel);
+await hotel1.HotelBookingig(6, hotel1);
+await hotel2.HotelBookingig(17, hotel2);
+/*
 int choice, option;
 do
 {

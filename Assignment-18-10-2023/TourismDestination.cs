@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignments
+namespace Assignment_2_oct19_Q1
 {
     internal class TourismDestination
     {
-        public TourismDestination(string? name, string? country, double rating)
+        public TourismDestination(string? name, string? country, double? rating)
         {
             Name = name;
             Country = country;
@@ -17,19 +17,15 @@ namespace Assignments
 
         public string? Name { get; set; }
         public string? Country { get; set; }
-        public double Rating { get; set; }
-       public static List<TourismDestination> destinations = new List<TourismDestination>() ;
-        public static void TourismDestinations()
-        {
-            Console.WriteLine("***Place Details By Rating in Descending Order***");
-            Console.WriteLine("Place Name\tCountryName\tRating");
-            var data = destinations.OrderByDescending(x => x.Rating).ThenByDescending(x => x.Name);
-            foreach (var destination in data)
-            {
-                Console.WriteLine($"\t{destination.Name}\t\t{destination.Country}\t\t{destination.Rating}");
-            }
-           
-        }
+        public double? Rating { get; set; }
 
+        public void SortListOfTour(List<TourismDestination> list)
+        {
+            var sortedList = list.OrderByDescending(x => x.Rating);
+            foreach (TourismDestination item in sortedList)
+            {
+                Console.WriteLine("Name:{0}\tCountry:{1}\tRating:{2}", item.Name, item.Country, item.Rating);
+            }
+        }
     }
 }
