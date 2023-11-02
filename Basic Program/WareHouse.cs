@@ -14,4 +14,8 @@ class Warehouse
             Console.WriteLine($"Worker {workerId} added a box. Total boxes: {boxCount}");
         }
     }
+    public int GetTotalBoxes()
+    {
+       return boxCount;
+    }
 }
