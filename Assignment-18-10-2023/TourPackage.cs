@@ -30,7 +30,14 @@ namespace Assignment
             lock (TourPackages)
             {
                 var b = TourPackages.Find(x => x.PackageId == a);
-                Console.WriteLine("package booked Destination:{0}\tStartSate:{1}\tPrice:{2}", b.Destination, b.StartDate, b.Price);
+                if (b != null)
+                {
+                    Console.WriteLine("package booked Destination:{0}\tStartSate:{1}\tPrice:{2}", b.Destination, b.StartDate, b.Price);
+                }
+                else
+                {
+                    Console.WriteLine("id not found!!1");
+                }
             }
         }
 
