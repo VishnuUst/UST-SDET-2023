@@ -1,7 +1,32 @@
-﻿using System;
-using System.Threading;
+﻿
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
+class CourseRegistration
+{
+    private List<string> registeredStudents = new List<string>();
+
+    public async Task RegisterStudentAsync(string studentName)
+    {
+        // Simulate an asynchronous registration process
+        await Task.Delay(1000); // Delay for 1 second (simulating work)
+        lock (registeredStudents)
+        {
+            registeredStudents.Add(studentName);
+            Console.WriteLine($"{studentName} has registered for the course.");
+        }
+    }
+
+    public int GetRegisteredStudentCount()
+    {
+        lock (registeredStudents)
+        {
+            return registeredStudents.Count;
+        }
+    }
+}
+/*
 class CourseRegistration
 {
     private List<string> registeredStudents = new List<string>();
@@ -23,4 +48,4 @@ class CourseRegistration
             return registeredStudents.Count;
         }
     }
-}
+}*/

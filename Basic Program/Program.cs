@@ -4,7 +4,28 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+class Program
+{
+    static async Task Main()
+    {
+        CourseRegistration course = new CourseRegistration();
+        int numberOfStudents = 5;
 
+        List<Task> registrationTasks = new List<Task>();
+
+        for (int i = 1; i <= numberOfStudents; i++)
+        {
+            string studentName = $"Student {i}";
+            Task registrationTask = course.RegisterStudentAsync(studentName);
+            registrationTasks.Add(registrationTask);
+        }
+
+        await Task.WhenAll(registrationTasks);
+
+        Console.WriteLine($"Course registration completed. Total registered students: {course.GetRegisteredStudentCount()}");
+    }
+}
+/*
 class Program
 {
     static async Task Main()
