@@ -2,7 +2,30 @@
 using Basic_Program;
 using System;
 using System.Threading;
+using System;
+using System.Threading.Tasks;
+
 class Program
+{
+    static async Task Main()
+    {
+        Console.WriteLine("Starting the asynchronous operation...");
+
+        // Perform an asynchronous operation
+        await PerformAsyncOperation();
+
+        Console.WriteLine("Asynchronous operation completed.");
+    }
+
+    static async Task PerformAsyncOperation()
+    {
+        // Simulate an asynchronous operation
+        await Task.Delay(2000); // Delay for 2 seconds (simulating work)
+        Console.WriteLine("Async operation is complete.");
+    }
+}
+
+/*class Program
 {
     static void Main()
     {
