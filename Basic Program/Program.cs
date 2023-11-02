@@ -6,6 +6,33 @@ class Program
 {
     static void Main()
     {
+        CourseRegistration course = new CourseRegistration();
+        int numberOfStudents = 5;
+
+        List<Thread> studentThreads = new List<Thread>();
+
+        for (int i = 1; i <= numberOfStudents; i++)
+        {
+            string studentName = $"Student {i}";
+            Thread studentThread = new Thread(() => course.RegisterStudent(studentName));
+            studentThreads.Add(studentThread);
+            studentThread.Start();
+        }
+
+        foreach (Thread studentThread in studentThreads)
+        {
+            studentThread.Join();
+        }
+
+        Console.WriteLine($"Course registration completed. Total registered students: {course.GetRegisteredStudentCount()}");
+    }
+}
+
+/*
+class Program
+{
+    static void Main()
+    {
         Warehouse warehouse = new Warehouse();
 
         Thread worker1 = new Thread(() => warehouse.AddBox(1));
