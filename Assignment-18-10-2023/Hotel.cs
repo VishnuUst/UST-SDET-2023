@@ -9,7 +9,7 @@ namespace Assignment_2_oct19_Q1
 {
     internal class Hotel : TourismDestination
     {
-        int currentRoom = 10;
+        //int currentRoom = 10;
         public Hotel(string? hotelName, int availableRoom, string? name, string? country, double? rating) :
             base(name, country, rating)
         {
@@ -23,12 +23,12 @@ namespace Assignment_2_oct19_Q1
         public async Task HotelBookingig(int hotelRoom, Hotel hotel)
         {
 
-            if (hotelRoom <= currentRoom)
+            if (hotelRoom <= AvailableRoom)
             {
                 await Task.Delay(2000);
-                currentRoom = currentRoom - hotelRoom;
+                AvailableRoom = AvailableRoom - hotelRoom;
 
-                Console.WriteLine("Hotel booked for:{0} \t Rooms left:{1}", hotel.HotelName, currentRoom);
+                Console.WriteLine("Hotel booked for:{0} \t Rooms left:{1}", hotel.HotelName, AvailableRoom);
             }
             else
             {
