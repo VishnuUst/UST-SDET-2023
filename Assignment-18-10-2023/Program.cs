@@ -1,8 +1,23 @@
 ﻿using Assignment;
+using Assignment_2_oct19_Q1;
 using Assignments;
 using System.Threading.Channels;
 using static Assignments.ExceptionHandling.MyException;
-ToDo toDo = new ToDo(1,"SDET","Completed");
+FamilyMember grandparent = new FamilyMember("Grandparent", 70);
+FamilyMember parent1 = new FamilyMember("Parent 1", 40);
+FamilyMember parent2 = new FamilyMember("Parent 2", 38);
+FamilyMember child1 = new FamilyMember("Child 1", 12);
+FamilyMember child2 = new FamilyMember("Child 2", 8);
+
+grandparent.AddChild(parent1);
+grandparent.AddChild(parent2);
+parent1.AddChild(child1);
+parent2.AddChild(child2);
+
+FamilyTree familyTree = new FamilyTree(grandparent);
+familyTree.DisplayFamilyTree();
+
+/*ToDo toDo = new ToDo(1,"SDET","Completed");
 ToDo toDo1 = new ToDo(2, "c#", "Pending");
 
 ToDo.toDoList.Add(toDo);
