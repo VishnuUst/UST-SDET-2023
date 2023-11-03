@@ -2,6 +2,20 @@
 using Assignments;
 using System.Threading.Channels;
 using static Assignments.ExceptionHandling.MyException;
+ToDo toDo = new ToDo(1,"SDET","Completed");
+ToDo toDo1 = new ToDo(2, "c#", "Pending");
+
+ToDo.toDoList.Add(toDo);
+ToDo.AddTodo(toDo);
+ToDo.AddTodo(toDo1);
+ToDo.updateList(2,"Completed");
+ToDo.Display("Completed");
+ToDo.Remove(1);
+
+
+
+
+/*
 TourPackage package = new TourPackage(1, "kochi", "12-11-2024", 1300);
 TourPackage package1 = new TourPackage(2, "Kolam", "12-10-2024", 1200);
 TourPackage package2 = new TourPackage(3, "kannur", "2-2-2023", 1100);
