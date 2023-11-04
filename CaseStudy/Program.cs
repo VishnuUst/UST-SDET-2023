@@ -166,7 +166,7 @@ class Program
                             case 4:
                                 Console.WriteLine("Enter Your Course Code You Want Withdraw");
                                 int eid = Convert.ToInt32(Console.ReadLine());
-                                Withdra(eid);
+                               Withdra(eid);
                                 break;
                             case 5:
                                 Environment.Exit(0);
