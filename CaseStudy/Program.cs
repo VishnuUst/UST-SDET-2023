@@ -46,7 +46,34 @@ class Program
                                 Console.WriteLine("Course Added Successfully");
                                 break;
                             case 2:
+                                Course cc = new Course();
+                                Console.WriteLine("****All Courses****");
+                                foreach (var d in Course.courses)
+                                {
+                                    if (d != null)
+                                    {
+                                        Console.WriteLine($"Course Code:{d.CourseCode}\t Course Title:{d.Title}\tInstructor:{d.Instructor}");
 
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("No Courses Found !!!!");
+                                    }
+                                }
+
+                                Console.WriteLine("**** Enrolled Student Details****");
+                                foreach(var s in cc.Enrollments )
+                                {
+                                    if (s != null)
+                                    {
+                                        Console.WriteLine($"Course Code:{cc.CourseCode}\t Course Title:{cc.Title}\tInstructor:{cc.Instructor}\t Stud Id:{s.Id}" +
+                                            $"student Name:{s.StudName}\tEmail:{s.Email}");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("No EnrollMent found!!!");
+                                    }
+                                }
                                 break;
                             default:
                                 Console.WriteLine("Invalid Option try again Later!!!");
@@ -93,7 +120,7 @@ class Program
                                     Console.WriteLine("***List Of Course Availble In India School***");
                                     foreach (var course in Course.courses)
                                     {
-
+                                       
                                         Console.WriteLine($"Course Code:{course.CourseCode}\tCourse Title:{course.Title}" +
                                             $"\tInstructor:{course.Instructor}\tNo:Of Seat:{course.MaxCount}\t");
 
@@ -105,8 +132,7 @@ class Program
                                     int sssid = Convert.ToInt32(Console.ReadLine());
                                     Console.WriteLine("Enter the course code You Want enroll");
                                     cid = Convert.ToInt32(Console.ReadLine());
-                                    DelegateOne delegateOne = new DelegateOne(courses.CourseRegistration);
-                                    delegateOne(sssid, cid);
+                                    Enrollasync(sssid, cid);
                                 }
                                 else
                                 {
@@ -140,8 +166,7 @@ class Program
                             case 4:
                                 Console.WriteLine("Enter Your Course Code You Want Withdraw");
                                 int eid = Convert.ToInt32(Console.ReadLine());
-                                DelegateTwo delegateTwo = new DelegateTwo(courses.CourseWithdrawal);
-                                delegateTwo(eid);
+                                Withdra(eid);
                                 break;
                             case 5:
                                 Environment.Exit(0);
@@ -167,7 +192,23 @@ class Program
             Console.WriteLine(ex.Message);
         }
     }
+    public static async Task Enrollasync(int sssid, int cid)
+    {
+        Course c = new Course();
+        await Task.Delay(1000);
+        DelegateOne delegateOne = new DelegateOne(c.CourseRegistration);
+        delegateOne.Invoke(sssid, cid);
+
+    }
+    public static async Task Withdra(int cid)
+    {
+        Course cou = new();
+        await Task.Delay(1000);
+        DelegateTwo delegateTwo = new DelegateTwo(cou.CourseWithdrawal);
+        delegateTwo.Invoke(cid);
+    }
 }
+
 /*
 try
 {
